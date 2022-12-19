@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a th:href="@{/}" class="logo">Система тестирования</a>
+    <a th:href="@{/results}" class="results">Результаты</a>
+    <a th:if="${name}=='admin'" th:href="@{/admin}" class="results">Все результаты</a>
+    <div class="menu" >
+        <div class="icons">
+            <a class="fas fa-user" th:text="${name}"></a>
+        </div>
+        <div class = "Exit">
+            <form th:action="@{/auth/login}">
+                <input class="butt" sec:authorize="isAnonymous()" type="submit" value="Войти">
+            </form>
+
+            <form th:method="POST" th:action="@{/logout}">
+                <input class="butt" sec:authorize="isAuthenticated()" type="submit" value="Выйти">
+            </form>
+        </div>
+    </div>
+
+</header>
+<div class="results_table">
+    <table border="1">
+        <tr>
+            <th>№</th>
+            <th>Пользователь</th>
+            <th>Балл пользователя</th>
+            <th>Максимальный балл</th>
+            <th>Предмет</th>
+        </tr>
+
+        <tr th:each="lst, i: ${list}">
+            <td th:utext="${i.count}">result</td>
+            <td th:utext="${lst.person.username}">result</td>
+            <td th:utext="${lst.result}">result</td>
+            <td th:utext="${lst.total}">total</td>
+            <td th:utext="${lst.subject}">subject</td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.test{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    text-align:center;
+}
+.test_tema{
+    font-size: 32px;
+}
+.test_text {
+    font-size:24px;
+}
+.test_butt{
+    font-size:18px;
+}
+#vo {
+    color:green;
+}
+#nvo {
+    color:red;
+}
+#ot {
+    color:blue;
+}
+#kn_pr{
+    margin-left: 16rem;
+}

@@ -1,0 +1,24 @@
+.results_table{
+    margin: 0 2rem 2rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #ECE9E0;
+    color: #656665;
+    border: 16px solid #ECE9E0;
+    border-radius: 20px;
+}
+th {
+    font-size: 28px;
+    padding: 10px;
+}
+td {
+    background: #F5D7BF;
+    font-size: 18px;
+    padding: 10px;
+}
